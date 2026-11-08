@@ -1,16 +1,22 @@
 import { useEffect, useState } from "react";
 import ClientesPage from "./pages/ClientesPage";
+import DashboardPage from "./pages/DashboardPage";
+import FinanceiroPage from "./pages/FinanceiroPage";
 import OrcamentosPage from "./pages/OrcamentosPage";
 import OrdensServicoPage from "./pages/OrdensServicoPage";
+import RelatoriosPage from "./pages/RelatoriosPage";
 import VeiculosPage from "./pages/VeiculosPage";
 
 const menu = [
-  ["⌂", "Dashboard"], ["▤", "Orçamentos"], ["▧", "Ordens de Serviço"],
-  ["▱", "Veículos"], ["♙", "Clientes"], ["▦", "Agenda"], ["⚒", "Serviços"],
-  ["▫", "Peças / Estoque"], ["♙", "Funcionários"], ["ⓢ", "Financeiro"],
-  ["▥", "Relatórios"], ["⚙", "Configurações"],
+  ["⌂", "Dashboard"],
+  ["▤", "Orçamentos"],
+  ["▧", "Ordens de Serviço"],
+  ["▱", "Veículos"],
+  ["♙", "Clientes"],
+  ["▫", "Peças / Estoque"],
+  ["ⓢ", "Financeiro"],
+  ["▥", "Relatórios"],
 ];
-
 const initialForm = {
   nome: "",
   codigo: "",
@@ -323,7 +329,9 @@ function App() {
           </button>
         </header>
 
-        {paginaAtual === "Clientes" ? (
+        {paginaAtual === "Dashboard" ? (
+          <DashboardPage onNavigate={setPaginaAtual} />
+        ) : paginaAtual === "Clientes" ? (
           <ClientesPage />
         ) : paginaAtual === "Veículos" ? (
           <VeiculosPage />
@@ -331,6 +339,10 @@ function App() {
           <OrcamentosPage />
         ) : paginaAtual === "Ordens de Serviço" ? (
           <OrdensServicoPage />
+        ) : paginaAtual === "Financeiro" ? (
+          <FinanceiroPage />
+        ) : paginaAtual === "Relatórios" ? (
+          <RelatoriosPage />
         ) : paginaAtual !== "Peças / Estoque" ? (
           <section className="empty-page">
             <div className="empty-icon">{menu.find(([_, nome]) => nome === paginaAtual)?.[0]}</div>

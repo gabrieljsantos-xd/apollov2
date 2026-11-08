@@ -413,6 +413,107 @@ nav { display: grid; gap: 3px; }.sidebar button { border: 0; color: #d6dce3; tex
 .status-convertido,
 .status-aguardando_pecas { background: #5a3195; }
 
+.report-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.report-tabs button {
+  border: 1px solid #35434e;
+  border-radius: 5px;
+  padding: 8px 12px;
+  color: #b9c5cf;
+  background: #202c36;
+  font-size: 12px;
+}
+
+.report-tabs button.ativo,
+.report-tabs button:hover {
+  color: #fff;
+  background: #246bd3;
+  border-color: #246bd3;
+}
+
+.summary-list {
+  padding: 4px 0;
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 13px;
+  border-bottom: 1px solid #29343d;
+  font-size: 12px;
+}
+
+.summary-row:last-child {
+  border-bottom: 0;
+}
+
+.summary-row span {
+  color: #b4bec8;
+}
+
+.summary-row strong {
+  color: #f2f5f8;
+  font-weight: 500;
+}
+
+.breakdown-list {
+  padding: 8px 13px 12px;
+  display: grid;
+  gap: 12px;
+}
+
+.breakdown-row {
+  display: grid;
+  gap: 5px;
+}
+
+.breakdown-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.breakdown-meta strong {
+  color: #f2f5f8;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.breakdown-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: #24303a;
+  overflow: hidden;
+}
+
+.breakdown-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #1768d8, #54a2fa);
+  font-style: normal;
+}
+
+.breakdown-row small {
+  color: #8f9daa;
+  font-size: 10px;
+}
+
+.stock-finance-stats {
+  margin-top: 9px;
+}
+
+.quote .status {
+  justify-self: end;
+}
+
 @media (max-width: 760px) {
   .modal-grid,
   .item-row {
@@ -422,6 +523,10 @@ nav { display: grid; gap: 3px; }.sidebar button { border: 0; color: #d6dce3; tex
   .inline-form {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .report-tabs {
+    flex-wrap: wrap;
   }
 }
 
